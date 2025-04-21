@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Home</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Changa:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-..."
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Tailwind via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap");
+
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+      .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+  </head>
+  <body class="">
+    <!-- navbar -->
+
+    <header class="w-full bg-white py-2">
+      <!-- Top Nav -->
+      <nav
+        class="flex flex-col md:flex-row justify-between items-center w-full px-4 md:px-8 text-[#87173D]"
+      >
+        <!-- Phone Section -->
+        <div class="mb-2 md:mb-0 text-center md:text-right order-2 md:order-1">
+          <p
+            class="flex items-center justify-center md:justify-start gap-3 text-[#87173D]"
+          >
+            <span class="text-sm">96598988258</span>
+            <img src="./assests/call-calling.png" alt="call" class="w-4 h-4" />
+          </p>
+          <p
+            class="font-bold text-[11px] leading-[100%] tracking-[0%] text-[#87173D]"
+          >
+            خصم لفترة محدودة – تسوق الآن
+          </p>
+        </div>
+
+        <!-- Logo Section -->
+        <div class="mb-3 md:mb-0 order-1 md:order-2">
+          <img src="./assests/logo.png" alt="logo" class="h-10 md:h-12" />
+        </div>
+
+        <!-- Language & Currency Section -->
+        <div class="flex items-center gap-3 order-3 md:order-3">
+          <div dir="rtl" class="flex items-center gap-1 md:gap-3">
+            <img
+              src="./assests/Flag_of_Kuwait.svg 3.png"
+              alt="flag"
+              class="w-5 h-4"
+            />
+            <p
+              class="font-bold text-[11px] leading-[100%] tracking-[0%] text-[#87173D]"
+            >
+              KWD
+            </p>
+          </div>
+          <div dir="rtl" class="flex items-center gap-1 md:gap-3 mr-2 md:mr-0">
+            <img
+              src="./assests/Flag_of_Kuwait.svg 3.png"
+              alt="flag"
+              class="w-5 h-4"
+            />
+            <p
+              class="font-bold text-[11px] leading-[100%] tracking-[0%] text-[#87173D]"
+            >
+              AR
+            </p>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Main Nav -->
+      <nav class="flex justify-center items-center mt-3 px-4">
+        <div
+          class="w-full border border-[#87173D] rounded-[10px] md:h-[40px] flex flex-col md:flex-row justify-between items-center px-3 md:px-8 py-2 md:py-0"
+        >
+          <!-- Mobile Menu Button - Only visible on mobile -->
+          <div class="md:hidden w-full flex justify-between items-center py-2">
+            <button id="mobile-menu-button" class="text-[#87173D]">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+
+            <!-- Mobile Icons -->
+            <div class="flex items-center gap-4">
+              <img src="./assests/Button ⏵ SVG.png" alt="search" />
+              <img src="./assests/SVG.png" alt="basket" />
+            </div>
+          </div>
+
+          <!-- Icons - Hidden on mobile -->
+          <div class="hidden md:flex items-center gap-6 order-3 md:order-1">
+            <img src="./assests/Button ⏵ SVG.png" alt="search" />
+            <img src="./assests/SVGperson.png" alt="PROFILE" />
+            <img src="./assests/heart.png" alt="HEART" />
+            <img src="./assests/SVG.png" alt="basket" />
+          </div>
+
+          <!-- Navigation Links -->
+          <div
+            id="nav-links"
+            class="hidden bg-white z-50 md:flex items-center gap-4 md:gap-8 flex-col md:flex-row py-3 md:py-0 w-full md:w-auto order-2"
+          >
+            <a
+              href="#"
+              class="font-normal text-[12px] md:text-[12.62px] leading-[100%] text-center tracking-[0%] text-[#87173D] py-2 md:py-0 w-full md:w-auto"
+            >
+              الأكثر مبيعاً
+            </a>
+            <a
+              href="#"
+              class="font-normal text-[12px] md:text-[12.62px] leading-[100%] text-center tracking-[0%] text-[#87173D] py-2 md:py-0 w-full md:w-auto"
+            >
+              بكدجات
+            </a>
+            <a
+              href="#"
+              class="font-normal text-[12px] md:text-[12.62px] leading-[100%] text-center tracking-[0%] text-[#87173D] py-2 md:py-0 w-full md:w-auto"
+            >
+              التمور
+            </a>
+            <a
+              href="#"
+              class="font-normal text-[12px] md:text-[12.62px] leading-[100%] text-center tracking-[0%] text-[#87173D] py-2 md:py-0 w-full md:w-auto"
+            >
+              جميع المنتجات
+            </a>
+          </div>
+
+          <!-- Empty div for spacing -->
+          <div class="hidden md:block order-3"></div>
+        </div>
+      </nav>
+    </header>
+
+    <script>
+      // Simple JavaScript for mobile menu toggle
+      document
+        .getElementById("mobile-menu-button")
+        .addEventListener("click", function () {
+          const navLinks = document.getElementById("nav-links");
+          navLinks.classList.toggle("hidden");
+          navLinks.classList.toggle("flex");
+        });
+    </script>
+
+    <div class="w-full md:w-[80%] mx-auto py-8 px-4 md:px-4">
+      <div dir="rtl" class="grid grid-cols-10 gap-6">
+        <div
+          class="col-span-10 md:col-span-5   overflow-hidden relative"
+        >
+          <div class="relative">
+            <img
+              src="./assests/image (5).png"
+              alt="عجوة المدينة المنورة"
+              class="w-full object-cover h-[400px]"
+            />
+            <button class="absolute top-5 right-5 shadow-md text-[#87173D]">
+                <i class="fa-regular fa-heart text-[#87173D] text-xl "></i>
+            </button>
+            <div class="absolute bottom-5 left-5">
+              <button
+                class="text-[#87173D] bg-white p-1 shadow-sm border border-[#87173D] bg-white w-[136px] h-[40px] font-[changa] font-bold text-[20px] leading-[22.6px] tracking-[0%] text-center align-middle uppercase"
+              >
+                اشتري الان
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-span-10 md:col-span-5">
+          <p
+            class="font-[changa] font-bold text-[24px] leading-[36px] text-[#87173D] ps-8 pb-8"
+          >
+            عبوة التمر الصقعي الملكي الفاخر من تمور الشيخ <br />
+          </p>
+          <p
+            class="my-5 font-string3 font-bold text-[24px] leading-[26.11px] tracking-[0%] text-center align-middle uppercase"
+          >
+            0.60 د.ك
+          </p>
+          <div class="flex flex-col justify-center items-center gap-5 !my-3">
+            <button
+              class="text-[#000000A8] my-5 w-full md:w-[504px] h-[54px] top-[573px] left-[173.5px] rounded-[6px] border-2font-tajawal border-2 border-[#3F7251] font-bold text-[24px] leading-[26.11px] tracking-[0%] text-center align-middle uppercase"
+            >
+              1 كيلوجرام
+            </button>
+            <div class="flex justify-between items-center w-full md:w-[504px]">
+              <div class="flex">
+                <i class="fas fa-star text-lg text-[#87173D]"></i>
+                <i class="fas fa-star text-lg text-[#87173D]"></i>
+                <i class="fas fa-star text-lg text-[#87173D]"></i>
+                <i class="fas fa-star text-lg text-[#87173D]"></i>
+                <i class="far fa-star text-lg text-[#87173D]"></i>
+              </div>
+
+              <a
+                href="#"
+                class="font-[Changa] text-xs text-[#87173D] underline font-semibold text-[8.35px] leading-[11.83px] tracking-[0%] text-center align-middle uppercase underline decoration-solid decoration-[0%] underline-offset-[0%]"
+              >
+                التقييمات</a
+              >
+            </div>
+            <div class="my-4">
+              <div class="flex items-center gap-6">
+                <div class="flex items-center gap-6">
+                  <button class="w-6 h-6 rounded-md bg-[#87173D] text-white">
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                  <span
+                    class="border border-[#87173D] w-8 h-8 flex justify-center items-center"
+                  >
+                    1</span
+                  >
+                  <button class="w-6 h-6 rounded-md bg-[#87173D] text-white">
+                    <i class="fa-solid fa-minus"></i>
+                  </button>
+                </div>
+                <div class="bg-[#87173D9E] w-[230px] md:w-[360px] h-[40px] rounded-md"></div>
+              </div>
+              <p
+                class="font-[String_3] font-medium text-[16px] leading-[22.6px] tracking-[0%] text-left align-middle uppercase underline decoration-solid decoration-[5.5%] underline-offset-[0%]"
+              >
+                <i class="fa-brands fa-telegram text-gray-500"></i> سياسة
+                الاسترجاع و التوصيل
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-span-10 ">
+            <h2 class="font-[Almarai] font-bold text-[30.4px] leading-[50.07px] tracking-[0.56px] text-right align-bottom uppercase">عبوة التمر الصقعي الملكي الفاخر من تمور الشيخ</h2>
+
+<p class="w-full font-[String_3] font-light text-[20.4px] leading-[33.07px] tracking-[0.56px] text-right align-bottom uppercase">
+    التمر الصقعي هو أحد التمور المعروفة والنادرة في الأسواق, على الرغم من أن الطلب عليه متزايد بشكل عام في الأسواق العالمية والمحلية. إلا أنه تقتصر زراعته على أماكن معينة، كما يشتهر باسم "التمر الذهبي", ويعد من أكثر أنواع التمور تميزا سواء في خصائصه الشكلية أو مذاقه الرائع وفوائده العديدة. يتمتع بمذاق سكري معتدل وحجم كبير ولون ممتزج بروعة البني والأصفر الذهبي، بالإضافة إلى ملمسه وقوامه اللين الذي يمنحك مذاقاً لا ينسى.
+    
+</p>
+<p class="text-[#87173D] font-[String_3] font-light text-[20.4px] leading-[33.07px] tracking-[0.56px] text-right align-bottom uppercase">
+     تمور الشيخ تقدم لك عبوة فاخرة بزنة 2 كيلوغرام من طعم الأصالة العربية.
+</p>
+
+<h2 class="font-[Almarai] font-bold text-[30.4px] leading-[50.07px] tracking-[0.56px] text-right align-bottom uppercase">
+    ما هو التمر الصقعي الملكي من تمور الشيخ
+    
+    </h2>
+
+    <p class="w-full font-[String_3] font-light text-[20.4px] leading-[33.07px] tracking-[0.56px] text-right align-bottom uppercase">
+       
+    يعد أحد أنواع التمور الفاخرة ذات النكهة والمذاق الفريد, حيث تثمر في نخيل تم زراعته وتغذيته بشكل عضوي وطبيعي, كما أن حصاده يتم بشكل يدوي. مما يضمن أعلى جودة، إلي جانب انه ليس مجرد نكهة فريدة بل أعجوبة مليئة بالفوائد.
+    
+    يحظى تمر الصقعي  على إعجاب الكثيرين, وذلك بسبب احتوائه على سكر الفاكهة وسكر العنب فقط دون السكر الأبيض. حيث أن الأنواع الأخري من التمور تحتوي على السكر الأبيض لذلك تتمتع بمذاق سكري عالي والإكثار دون اعتدال يسبب عادةً السمنة.
+    
+    </p>
+
+
+    <h2 class="font-[Almarai] font-bold text-[30.4px] leading-[50.07px] tracking-[0.56px] text-right align-bottom uppercase">
+        الفوائد الغذائية في التمر الصقعي من تمور الشيخ
+        
+        </h2>
+        <p class="w-full font-[String_3] font-light text-[20.4px] leading-[33.07px] tracking-[0.56px] text-right align-bottom uppercase">
+
+    يتميز هذا النوع تحديدا بنكهته الرائعة وجودته العالية, كما أن استخدام التمر الصقعي كمكمل للوجبات الرئيسية يعمل على إمداد الجسم بما يحتاجه من العناصر الغذائية.
+    
+    حيث أنه يعتبر مصدر غني بالألياف وفيتامين "C", بالإضافة إلى دوره فى تعزيز صحة القلب والأوعية الدموية وتقوية العظام. وذلك كله بفضل احتوائه على المغنيسيوم والبوتاسيوم والكالسيوم وعناصر أخرى هامة.
+
+</p>
+
+            </div>
+      </div>
+    </div>
+    <div class="w-full md:w-[80%] mx-auto py-8 px-4">
+        <p class="font-[String_3] font-bold text-[36px] leading-[33.07px] tracking-[0px] text-right align-bottom uppercase text-[#87173D] my-5 ">
+            منتجات ذات صلة</p>
+        <div class="grid grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Product Card 1 -->
+          <div
+            class="bg-white bg-white shadow-[0px_3.44px_3.44px_0px_#00000040] overflow-hidden border border-gray-200 relative"
+          >
+            <div class="relative p-3 ">
+              <img
+                src="./assests/image (5).png"
+                alt="عجوة المدينة المنورة"
+                class="w-full h-[300px] object-cover "
+              />
+              <button class="absolute top-5 right-5 shadow-md text-[#87173D]">
+                <!-- <img src="./assests/heart.png" alt="heart" /> -->
+                <!-- <i class="fa fa-heart-o  text-[#87173D]" aria-hidden="true"></i> -->
+                <i class="fa-regular fa-heart text-[#87173D] text-xl "></i>
+              </button>
+              <div
+                class="absolute bottom-5 left-5 bg-white rounded-lg p-1 shadow-sm"
+              >
+              <i class="fa-solid fa-cart-shopping text-[#87173D] text-xl"></i>
+              </div>
+            </div>
+  
+            <div class="p-4">
+              <h3
+                class="font-[Changa] font-semibold text-[16px] text-[#000000] leading-[25.6px] tracking-[0%] text-center align-middle uppercase mb-2"
+              >
+                عجوة التمر المفضل الطبيعي الطعام من التمر (كيلو واحد)
+              </h3>
+  
+              <div class="flex justify-center items-center mb-2 text-center">
+                <span
+                  class="text-[#87173D] font-[Changa] font-semibold text-[14px] leading-[25.6px] tracking-[0%] text-center align-middle uppercase"
+                >
+                  د.ك</span
+                >
+                <span
+                  class="font-[Changa] font-semibold text-[14px] text-[#000000] leading-[25.6px] tracking-[0%] text-center align-middle uppercase"
+                  >0.60
+                </span>
+              </div>
+  
+              <div class="flex justify-between items-center">
+                <a
+                  href="#"
+                  class="font-[Changa] text-xs text-[#87173D] underline font-semibold text-[8.35px] leading-[11.83px] tracking-[0%] text-center align-middle uppercase underline decoration-solid decoration-[0%] underline-offset-[0%]"
+                  >مشاهدة المزيد</a
+                >
+  
+                <div class="flex flex-col items-center">
+                  <!-- <span class="text-xs text-gray-500 ml-1"> أشتري الان</span> -->
+                  <p
+                    class="font-[Changa] font-extrabold text-[16px] text-[#87173D] my-3 leading-[11.83px] tracking-[0%] text-center align-middle uppercase"
+                  >
+                    أشتري الان
+                  </p>
+  
+                  <div class="flex">
+                    <i class="fas fa-star text-xs text-[#87173D]"></i>
+                    <i class="fas fa-star text-xs text-[#87173D]"></i>
+                    <i class="fas fa-star text-xs text-[#87173D]"></i>
+                    <i class="fas fa-star text-xs text-[#87173D]"></i>
+                    <i class="far fa-star text-xs text-[#87173D]"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Product Card 1 -->
+          <div
+            class="bg-white bg-white shadow-[0px_3.44px_3.44px_0px_#00000040] overflow-hidden border border-gray-200 relative"
+          >
+            <div class="relative p-3 ">
+              <img
+                src="./assests/image (5).png"
+                alt="عجوة المدينة المنورة"
+                class="w-full h-[300px] object-cover "
+              />
+              <button class="absolute top-5 right-5 shadow-md text-[#87173D]">
+                <!-- <img src="./assests/heart.png" alt="heart" /> -->
+                <!-- <i class="fa fa-heart-o  text-[#87173D]" aria-hidden="true"></i> -->
+                <i class="fa-regular fa-heart text-[#87173D] text-xl "></i>
+              </button>
+              <div
+                class="absolute bottom-5 left-5 bg-white rounded-lg p-1 shadow-sm"
+              >
+              <i class="fa-solid fa-cart-shopping text-[#87173D] text-xl"></i>
+              </div>
+            </div>
+  
+            <div class="p-4">
+              <h3
+                class="font-[Changa] font-semibold text-[16px] text-[#000000] leading-[25.6px] tracking-[0%] text-center align-middle uppercase mb-2"
+              >
+                عجوة التمر المفضل الطبيعي الطعام من التمر (كيلو واحد)
+              </h3>
+  
+              <div class="flex justify-center items-center mb-2 text-center">
+                <span
+                  class="text-[#87173D] font-[Changa] font-semibold text-[14px] leading-[25.6px] tracking-[0%] text-center align-middle uppercase"
+                >
+                  د.ك</span
+                >
+                <span
+                  class="font-[Changa] font-semibold text-[14px] text-[#000000] leading-[25.6px] tracking-[0%] text-center align-middle uppercase"
+                  >0.60
+                </span>
+              </div>
+  
+              <div class="flex justify-between items-center">
+                <a
+                  href="#"
+                  class="font-[Changa] text-xs text-[#87173D] underline font-semibold text-[8.35px] leading-[11.83px] tracking-[0%] text-center align-middle uppercase underline decoration-solid decoration-[0%] underline-offset-[0%]"
+                  >مشاهدة المزيد</a
+                >
+  
+                <div class="flex flex-col items-center">
+                  <!-- <span class="text-xs text-gray-500 ml-1"> أشتري الان</span> -->
+                  <p
+                    class="font-[Changa] font-extrabold text-[16px] text-[#87173D] my-3 leading-[11.83px] tracking-[0%] text-center align-middle uppercase"
+                  >
+                    أشتري الان
+                  </p>
+  
+                  <div class="flex">
+                    <i class="fas fa-star text-xs text-[#87173D]"></i>
+                    <i class="fas fa-star text-xs text-[#87173D]"></i>
+                    <i class="fas fa-star text-xs text-[#87173D]"></i>
+                    <i class="fas fa-star text-xs text-[#87173D]"></i>
+                    <i class="far fa-star text-xs text-[#87173D]"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Product Card 1 -->
+          <div
+            class="bg-white bg-white shadow-[0px_3.44px_3.44px_0px_#00000040] overflow-hidden border border-gray-200 relative"
+          >
+            <div class="relative p-3 ">
+              <img
+                src="./assests/image (5).png"
+                alt="عجوة المدينة المنورة"
+                class="w-full h-[300px] object-cover "
+              />
+              <button class="absolute top-5 right-5 shadow-md text-[#87173D]">
+                <!-- <img src="./assests/heart.png" alt="heart" /> -->
+                <!-- <i class="fa fa-heart-o  text-[#87173D]" aria-hidden="true"></i> -->
+                <i class="fa-regular fa-heart text-[#87173D] text-xl "></i>
+              </button>
+              <div
+                class="absolute bottom-5 left-5 bg-white rounded-lg p-1 shadow-sm"
+              >
+              <i class="fa-solid fa-cart-shopping text-[#87173D] text-xl"></i>
+              </div>
+            </div>
+  
+            <div class="p-4">
+              <h3
+                class="font-[Changa] font-semibold text-[16px] text-[#000000] leading-[25.6px] tracking-[0%] text-center align-middle uppercase mb-2"
+              >
+                عجوة التمر المفضل الطبيعي الطعام من التمر (كيلو واحد)
+              </h3>
+  
+              <div class="flex justify-center items-center mb-2 text-center">
+                <span
+                  class="text-[#87173D] font-[Changa] font-semibold text-[14px] leading-[25.6px] tracking-[0%] text-center align-middle uppercase"
+                >
+                  د.ك</span
+                >
+                <span
+                  class="font-[Changa] font-semibold text-[14px] text-[#000000] leading-[25.6px] tracking-[0%] text-center align-middle uppercase"
+                  >0.60
+                </span>
+              </div>
+  
+              <div class="flex justify-between items-center">
+                <a
+                  href="#"
+                  class="font-[Changa] text-xs text-[#87173D] underline font-semibold text-[8.35px] leading-[11.83px] tracking-[0%] text-center align-middle uppercase underline decoration-solid decoration-[0%] underline-offset-[0%]"
+                  >مشاهدة المزيد</a
+                >
+  
+                <div class="flex flex-col items-center">
+                  <!-- <span class="text-xs text-gray-500 ml-1"> أشتري الان</span> -->
+                  <p
+                    class="font-[Changa] font-extrabold text-[16px] text-[#87173D] my-3 leading-[11.83px] tracking-[0%] text-center align-middle uppercase"
+                  >
+                    أشتري الان
+                  </p>
+  
+                  <div class="flex">
+                    <i class="fas fa-star text-xs text-[#87173D]"></i>
+                    <i class="fas fa-star text-xs text-[#87173D]"></i>
+                    <i class="fas fa-star text-xs text-[#87173D]"></i>
+                    <i class="fas fa-star text-xs text-[#87173D]"></i>
+                    <i class="far fa-star text-xs text-[#87173D]"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+         
+        </div>
+    
+  
+      </div>
+    <footer dir="rtl" class="bg-pink-900 text-white px-8">
+      <!-- Main Footer Content -->
+      <div class="container mx-auto px-4 py-8">
+        <div class="flex flex-col md:flex-row justify-between">
+          <!-- Right Column - Logo and Contact -->
+          <div class="text-right mb-6 md:mb-0">
+            <!-- Logo -->
+            <div class="mb-4">
+              <img src="./assests/logo1.png" alt="Logo" class="inline-block" />
+            </div>
+
+            <!-- Phone Number -->
+            <div class="mb-2">
+              <p
+                class="font-[font-family/Font 1] font-bold text-[13px] leading-[17.85px] tracking-[0%] text-right align-middle"
+              >
+                رقم الهاتف: <span class="text-[#E9ECEF]">96538898234</span>
+              </p>
+            </div>
+
+            <!-- Email -->
+            <div class="mb-4">
+              <p
+                class="font-[font-family/Font 1] font-bold text-[13px] leading-[17.85px] tracking-[0%] text-right align-middle"
+              >
+                البريد الألكتروني للتواصل:
+                <span class="text-[#E9ECEF]">info@alshaykh.net</span>
+              </p>
+            </div>
+
+            <!-- Social Media Icons -->
+            <div class="flex justify-end space-x-4 space-x-reverse">
+              <a href="#" class="text-white hover:text-gray-300">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"
+                  ></path>
+                </svg>
+              </a>
+              <a href="#" class="text-white hover:text-gray-300">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Middle Column - Quick Links -->
+          <div class="text-right mb-6 md:mb-0">
+            <h3
+              class="font-[font-family/Font 1] font-bold text-[15px] leading-[14.4px] tracking-[0%] text-right align-middle uppercase"
+            >
+              روابط مختصرة
+            </h3>
+            <ul>
+              <li class="mb-2">
+                <a
+                  href="#"
+                  class="font-[font-family/Font 1] font-normal text-[10.5px] leading-[17.85px] tracking-[0%] text-right align-middle"
+                  >جميع المنتجات</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="#"
+                  class="font-[font-family/Font 1] font-normal text-[10.5px] leading-[17.85px] tracking-[0%] text-right align-middle"
+                  >التقويم</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="#"
+                  class="font-[font-family/Font 1] font-normal text-[10.5px] leading-[17.85px] tracking-[0%] text-right align-middle"
+                  >إعلانات</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="#"
+                  class="font-[font-family/Font 1] font-normal text-[10.5px] leading-[17.85px] tracking-[0%] text-right align-middle"
+                  >اخبار عنا</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="#"
+                  class="font-[font-family/Font 1] font-normal text-[10.5px] leading-[17.85px] tracking-[0%] text-right align-middle"
+                  >تواصل معنا</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Left Column - Customer Service -->
+          <div class="text-right">
+            <h3
+              class="font-[font-family/Font 1] font-bold text-[15px] leading-[14.4px] tracking-[0%] text-right align-middle uppercase"
+            >
+              خدمة العملاء
+            </h3>
+            <ul>
+              <li class="mb-2">
+                <a
+                  href="#"
+                  class="font-[font-family/Font 1] font-normal text-[10.5px] leading-[17.85px] tracking-[0%] text-right align-middle"
+                  >سياسة الاسترجاع و التوصيل</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="#"
+                  class="font-[font-family/Font 1] font-normal text-[10.5px] leading-[17.85px] tracking-[0%] text-right align-middle"
+                  >سياسة الخصوصية</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright Section -->
+      <div dir="ltr" class="border-t border-pink-800 py-4">
+        <div
+          class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center"
+        >
+          <!-- Payment Methods -->
+          <img src="./assests/List.png" alt="list" />
+
+          <!-- Copyright Text -->
+          <div class="text-sm">
+            All Rights Reserved Alshayeh, Developed and Designed by BeGroup
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>articles en</title>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Changa:wght@400;600&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+          integrity="sha512-..."
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer"
+        />
+    
+        <!-- Tailwind via CDN -->
+        <script src="https://cdn.tailwindcss.com"></script>
+    
+        <style>
+          @keyframes carousel-slide {
+            0%, 25% {
+              transform: translateX(0);
+            }
+            33.33%, 58.33% {
+              transform: translateX(-100%);
+            }
+            66.66%, 91.66% {
+              transform: translateX(-200%);
+            }
+            100% {
+              transform: translateX(0);
+            }
+          }
+      
+          .autoplay-carousel {
+            animation: carousel-slide 10s infinite;
+          }
+      
+          /* Make animation pause on hover */
+          .autoplay-carousel-container:hover .autoplay-carousel {
+            animation-play-state: paused;
+          }
+      
+          /* Indicator animations */
+          @keyframes indicator-1 {
+            0%, 33.32% { background-color:#87173D; width: 2.5rem; }
+            33.33%, 100% { background-color: rgb(209, 213, 219); width: 2rem; }
+          }
+          
+          @keyframes indicator-2 {
+            0%, 33.32% { background-color: rgb(209, 213, 219); width: 2rem; }
+            33.33%, 66.65% { background-color: #87173D; width: 2.5rem; }
+            66.66%, 100% { background-color: rgb(209, 213, 219); width: 2rem; }
+          }
+          
+          @keyframes indicator-3 {
+            0%, 66.65% { background-color: rgb(209, 213, 219); width: 2rem; }
+            66.66%, 99.99% { background-color: #87173D; width: 2.5rem; }
+            100% { background-color: rgb(209, 213, 219); width: 2rem; }
+          }
+      
+          .indicator-1 {
+            animation: indicator-1 10s infinite;
+          }
+          
+          .indicator-2 {
+            animation: indicator-2 10s infinite;
+          }
+          
+          .indicator-3 {
+            animation: indicator-3 10s infinite;
+          }
+      
+          .autoplay-carousel-container:hover .indicator-1,
+          .autoplay-carousel-container:hover .indicator-2,
+          .autoplay-carousel-container:hover .indicator-3 {
+            animation-play-state: paused;
+          }
+        </style>
+        <style>
+          @import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap");
+         
+          .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+          }
+          .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+          }
+        </style>
+       <style>
+        /* Sidebar animation */
+        .sidebar-translate {
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        /* Hide sidebar off-screen */
+        .sidebar-closed {
+            transform: translateX(-100%);
+        }
+        
+        /* Show sidebar on-screen */
+        .sidebar-open {
+            transform: translateX(0);
+        }
+        
+        /* Overlay animation */
+        .overlay-transition {
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+        }
+        
+        /* Hide overlay */
+        .overlay-hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        /* Show overlay */
+        .overlay-visible {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+      </head>
+<body>
+    <header class=" hidden md:block w-full bg-white py-2">
+        <!-- Top Nav -->
+        <nav
+          class="flex flex-col md:flex-row justify-between items-center w-full px-4 md:px-8 text-[#87173D]"
+        >
+          <!-- Phone Section -->
+          <div class="mb-2 md:mb-0 text-center md:text-left order-2 md:order-1">
+            <p
+              class="flex items-center justify-center md:justify-start gap-3 text-[#87173D]"
+            >
+              <span class="text-sm">+1 (555) 123-4567</span>
+              <img src="./assests/call-calling.png" alt="call" class="w-4 h-4" />
+            </p>
+            <p
+              class="font-bold text-[11px] leading-[100%] tracking-[0%] text-[#87173D]"
+            >
+              Limited time discount - Shop now
+            </p>
+          </div>
+  
+          <!-- Logo Section -->
+          <div class="mb-3 md:mb-0 order-1 md:order-2">
+            <img src="./assests/logo.png" alt="logo" class="h-10 md:h-12" />
+          </div>
+  
+          <!-- Language & Currency Section -->
+          <div class="flex items-center gap-3 order-3 md:order-3">
+            <div dir="rtl" class="flex items-center gap-1 md:gap-3">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/125px-Flag_of_the_United_States.svg.png"
+                alt="flag"
+                class="w-5 h-4"
+              />
+              <p
+                class="font-bold text-[11px] leading-[100%] tracking-[0%] text-[#87173D]"
+              >
+                USD
+              </p>
+            </div>
+            <div dir="rtl" class="flex items-center gap-1 md:gap-3 mr-2 md:mr-0">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/125px-Flag_of_the_United_States.svg.png"
+                alt="flag"
+                class="w-5 h-4"
+              />
+              <p
+                class="font-bold text-[11px] leading-[100%] tracking-[0%] text-[#87173D]"
+              >
+                EN
+              </p>
+            </div>
+          </div>
+        </nav>
+  
+        <!-- Main Nav -->
+        <nav dir="rtl" class="flex justify-center items-center mt-3 px-4">
+          <div
+            class="w-full border border-[#87173D] rounded-[10px] md:h-[40px] flex flex-col md:flex-row justify-between items-center px-3 md:px-8 py-2 md:py-0"
+          >
+            <!-- Mobile Menu Button - Only visible on mobile -->
+            <div class="md:hidden w-full flex justify-between items-center py-2">
+              <button id="mobile-menu-button" class="text-[#87173D]">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
+              </button>
+  
+              <!-- Mobile Icons -->
+              <div class="flex items-center gap-4">
+                <img src="./assests/Button ⏵ SVG.png" alt="search" />
+                <img src="./assests/SVG.png" alt="basket" />
+              </div>
+            </div>
+  
+           <!-- Empty div for spacing -->
+           <div class="hidden md:block order-3"></div>
+  
+            <!-- Navigation Links -->
+            <div
+              id="nav-links"
+              class="hidden bg-white z-50 md:flex items-center gap-4 md:gap-8 flex-col md:flex-row py-3 md:py-0 w-full md:w-auto order-2"
+            >
+              <a
+                href="#"
+                class="font-normal text-[12px] md:text-[12.62px] leading-[100%] text-center tracking-[0%] text-[#87173D] py-2 md:py-0 w-full md:w-auto"
+              >
+                Best Sellers
+              </a>
+              <a
+                href="#"
+                class="font-normal text-[12px] md:text-[12.62px] leading-[100%] text-center tracking-[0%] text-[#87173D] py-2 md:py-0 w-full md:w-auto"
+              >
+                Packages
+              </a>
+              <a
+                href="#"
+                class="font-normal text-[12px] md:text-[12.62px] leading-[100%] text-center tracking-[0%] text-[#87173D] py-2 md:py-0 w-full md:w-auto"
+              >
+                Dates
+              </a>
+              <a
+                href="#"
+                class="font-normal text-[12px] md:text-[12.62px] leading-[100%] text-center tracking-[0%] text-[#87173D] py-2 md:py-0 w-full md:w-auto"
+              >
+                All Products
+              </a>
+            </div>
+  
+           
+              <!-- Icons - Hidden on mobile -->
+              <div class="hidden md:flex items-center gap-6 order-3 md:order-1">
+                  <img src="./assests/Button ⏵ SVG.png" alt="search" />
+                  <img src="./assests/SVGperson.png" alt="PROFILE" />
+                  <img src="./assests/heart.png" alt="HEART" />
+                  <img src="./assests/SVG.png" alt="basket" />
+                </div>
+          </div>
+        </nav>
+      </header>
+  
+      <script>
+        // Simple JavaScript for mobile menu toggle
+        document
+          .getElementById("mobile-menu-button")
+          .addEventListener("click", function () {
+            const navLinks = document.getElementById("nav-links");
+            navLinks.classList.toggle("hidden");
+            navLinks.classList.toggle("flex");
+          });
+      </script>
+  
+      <header class="flex md:hidden justify-between items-center px-2">
+        <div class="flex items-center gap-3 order-3 md:order-3">
+          <div dir="rtl" class="flex items-center gap-1 md:gap-3">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/125px-Flag_of_the_United_States.svg.png"
+              alt="flag"
+              class="w-5 h-4"
+            />
+            <p
+              class="font-bold text-[11px] leading-[100%] tracking-[0%] text-[#87173D]"
+            >
+              USD
+            </p>
+          </div>
+          <div dir="rtl" class="flex items-center gap-1 md:gap-3 mr-2 md:mr-0">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/125px-Flag_of_the_United_States.svg.png"
+              alt="flag"
+              class="w-5 h-4"
+            />
+            <p
+              class="font-bold text-[11px] leading-[100%] tracking-[0%] text-[#87173D]"
+            >
+              EN
+            </p>
+          </div>
+        </div>
+         <!-- icon -->
+         <!-- <img src="./assests/textalign-justifyleft.png" alt="bar"> -->
+  
+         <button 
+         id="sidebarToggle" 
+         class=" p-3  transition duration-200"
+     >
+     <img src="./assests/textalign-justifyleft.png" alt="menu">
+     </button>
+  
+     <!-- tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt -->
+     <aside 
+     id="sidebar" 
+     class="fixed top-0 left-0 bg-[#87173D] rounded-r-[10px]  w-[233px] h-full bg-white shadow-xl z-50 sidebar-translate sidebar-closed"
+  >
+     <!-- Sidebar Header -->
+     <div class="p-6 ">
+         <div class="flex justify-between items-end">
+            
+             <button 
+                 id="sidebarClose" 
+                 class="text-gray-500 rounded-full border flex justify-center items-center border-white w-5 h-5 0 focus:outline-none"
+             >
+                 <i class="fas fa-times text-[10px] text-white"></i>
+             </button>
+         </div>
+     </div>
+     
+     <!-- Sidebar Content -->
+     <div class="p-6 flex flex-col justify-between items-center w-full  h-[90vh]">
+         <ul class="space-y-3">
+             <li class="flex justify-center items-center">
+                 <button class="w-full flex justify-center items-center gap-3 p-3 border-b border-b-white transition duration-200">
+                  
+                     <span class="text-white font-[Changa] font-semibold text-[10px] leading-[4.44px] tracking-[0%] text-center align-middle uppercase">All Products</span>
+                 </button>
+             </li>
+             <li class="flex justify-center items-center ">
+                 <button class="w-full flex justify-center items-center gap-3 p-3 border-b border-b-white transition duration-200">
+                  
+                     <span class="text-white font-[Changa] font-semibold text-[10px] leading-[4.44px] tracking-[0%] text-center align-middle uppercase">Dates</span>
+                 </button>
+             </li>
+             <li class="flex justify-center items-center  ">
+                 <button class="w-full flex justify-center items-center gap-3 p-3 border-b border-b-white transition duration-200">
+                  
+                     <span class="text-white font-[Changa] font-semibold text-[10px] leading-[4.44px] tracking-[0%] text-center align-middle uppercase">Packages</span>
+                 </button>
+             </li>
+             <li class="flex justify-center items-center">
+                 <button class="w-full flex justify-center items-center gap-3 p-3 border-b border-b-white transition duration-200">
+                  
+                     <span class="text-white font-[Changa] font-semibold text-[10px] leading-[4.44px] tracking-[0%] text-center align-middle uppercase">Best Sellers</span>
+                 </button>
+             </li>
+             <li class="flex justify-center items-center">
+                 <button class="w-full flex justify-center items-center gap-3 p-3 border-b border-b-white transition duration-200">
+                  
+                     <span class="text-white font-[Changa] font-semibold text-[10px] leading-[4.44px] tracking-[0%] text-center align-middle uppercase">Our Articles</span>
+                 </button>
+             </li>
+           
+         </ul>
+  <div>
+  
+    <p class="font-[Changa] text-white font-semibold text-[10px]  tracking-[0%] text-center align-middle uppercase"
+    > Need help? 
+  
+    <br/>
+  
+    Contact customer service at
+  </p>
+    <div class=" ms-3 flex items-center gap-1 my-1  font-[Changa] text-white font-semibold text-[10px]  tracking-[0%] text-center align-middle uppercase"
+    >
+    +1 (555) 123-4567
+    <i class="fa-solid fa-phone-volume text-white text-[8px]"></i>
+  </div>
+  <p class="font-[Changa] text-white font-semibold text-[10px] leading-[3.4px] tracking-[0%] text-center align-middle lowercase"
+  >info@alshaykh.net</p>
+  
+  </div>
+  
+  <div class="w-full">
+    <p class="text-white  font-[Changa] font-semibold text-[12px] leading-[4.44px] tracking-[0%] text-left  uppercase"
+    >Connect via </p>
+  
+    <div class="flex justify-end items-center gap-3 mt-2 me-12">
+     
+      <img src="./assests/whatsapp.png" alt="whatsapp">
+      <img src="./assests/twitter.png" alt="twitter">
+    </div>
+    <div class="flex justify-center items-center gap-3 mt-5">
+     
+     <button class="font-[Changa] bg-white p-2 py-4 rounded-md font-semibold text-[10px] leading-[4.44px] tracking-[0%] text-center align-middle uppercase"
+     >Create New Account</button>
+     <button class="font-[Changa] bg-white p-2 py-4 rounded-md font-semibold text-[10px] leading-[4.44px] tracking-[0%] text-center align-middle uppercase"
+     > Login</button>
+      
+    </div>
+  </div>
+     </div>
+  </aside>
+  
+  <!-- Overlay -->
+  <div 
+     id="sidebarOverlay" 
+     class="fixed inset-0 bg-white bg-opacity-50 z-40 overlay-transition overlay-hidden"
+  ></div>
+  
+  <!-- JavaScript -->
+  <script>
+     document.addEventListener('DOMContentLoaded', function() {
+         const sidebarToggle = document.getElementById('sidebarToggle');
+         const sidebarClose = document.getElementById('sidebarClose');
+         const sidebar = document.getElementById('sidebar');
+         const sidebarOverlay = document.getElementById('sidebarOverlay');
+  
+         // Open sidebar
+         sidebarToggle.addEventListener('click', function() {
+             sidebar.classList.remove('sidebar-closed');
+             sidebar.classList.add('sidebar-open');
+             sidebarOverlay.classList.remove('overlay-hidden');
+             sidebarOverlay.classList.add('overlay-visible');
+             document.body.style.overflow = 'hidden';
+         });
+  
+         // Close sidebar
+         function closeSidebar() {
+             sidebar.classList.remove('sidebar-open');
+             sidebar.classList.add('sidebar-closed');
+             sidebarOverlay.classList.remove('overlay-visible');
+             sidebarOverlay.classList.add('overlay-hidden');
+             document.body.style.overflow = '';
+         }
+  
+         sidebarClose.addEventListener('click', closeSidebar);
+         sidebarOverlay.addEventListener('click', closeSidebar);
+  
+         // Close sidebar with Escape key
+         document.addEventListener('keydown', function(e) {
+             if (e.key === 'Escape' && sidebar.classList.contains('sidebar-open')) {
+                 closeSidebar();
+             }
+         });
+     });
+  </script>
+     <!-- tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt -->
+  
+         <!-- phone -->
+         <p
+         class="flex items-center justify-center md:justify-start gap-3 text-[#87173D]"
+       >
+         <span class="text-sm">+1 (555) 123-4567</span>
+         <img src="./assests/call-calling.png" alt="call" class="w-4 h-4" />
+       </p>
+     
+         <!-- image -->
+         <div>
+  
+          <div class=" order-1 md:order-2">
+            <img src="./assests/logo.png" alt="logo" class="h-10 md:h-12" />
+          </div>
+  
+          <p
+          class="font-bold  text-[8px] text-center leading-[100%] tracking-[0%] text-[#87173D]"
+        >
+          Limited time discount - Shop now
+        </p>
+         </div>
+      </header>
+
+<!--  -->
+<div class="w-full md:w-[80%] mx-auto py-8 px-4 md:px-4">
+    <div dir="rtl" class="flex justify-end mt-10 items-center">
+           
+        <a href="url" class="font-[Almarai] font-bold text-[32px] leading-[100%] tracking-[0%] text-center align-middle text-[#87173D]">Articles</a>
+        <i class="fa fa-chevron-right text-[#87173D] mx-4" aria-hidden="true"></i>
+        <a href="url" class="font-[Almarai] font-light text-[24px] leading-[100%] tracking-[0%] text-right align-middle text-[#87173D]">Home</a>
+        
+    </div>
+    <div dir="ltr" class="grid grid-cols-10 gap-6">
+        <div
+        class="col-span-10 relative overflow-hidden"
+      >
+       
+      <div class="my-5 flex justify-center items-center relative shadow-[0px_11.9px_11.9px_0px_#00000040] ">
+
+          <div class="bg-[#87173D63] h-64 absolute top-0 left-0  bottom-0 right-0  flex flex-col justify-center items-center">
+           
+          </div>
+          <img src="./assests/article.png" alt="middle"  class="h-64 min-w-full"/>
+
+     
+
+      </div>
+     
+      </div>
+      <div class="col-span-10 flex justify-center items-center  ">
+      <img src="./assests/art2.png" class="shadow-[0px_11.9px_11.9px_0px_#00000040]" alt="">
+      </div>
+
+      <div dir="ltr" class="col-span-10">
+          <h2 class="font-[Almarai] font-bold text-[30.4px] leading-[50.07px] tracking-[0.56px] text-left align-bottom uppercase">Premium Royal Sukkari Dates Package from Sheikh Dates</h2>
+
+<p class="w-full font-[String_3] font-light text-[20.4px] leading-[33.07px] tracking-[0.56px] text-left align-bottom uppercase">
+  Sukkari dates are known as one of the rare and premium varieties in markets. Despite growing global and local demand, their cultivation is limited to specific regions. Often called "Golden Dates", they stand out for their unique characteristics, exquisite taste, and numerous health benefits. They offer a moderate sweet flavor, large size, and a beautiful golden-brown color with a soft texture that provides an unforgettable taste experience.
+</p>
+<p class="text-[#87173D] font-[String_3] font-light text-[20.4px] leading-[33.07px] tracking-[0.56px] text-left align-bottom uppercase">
+  Sheikh Dates presents this luxurious 2kg package of authentic Arabian flavor.
+</p>
+
+<h2 class="font-[Almarai] font-bold text-[30.4px] leading-[50.07px] tracking-[0.56px] text-left align-bottom uppercase">
+  What is Royal Sukkari Dates from Sheikh Dates?
+</h2>
+
+<p class="w-full font-[String_3] font-light text-[20.4px] leading-[33.07px] tracking-[0.56px] text-left align-bottom uppercase">
+  These are premium quality dates with a unique flavor profile, grown on organically nurtured palm trees and hand-harvested to ensure the highest quality. They're not just a distinctive taste but a nutritional powerhouse.
+  
+  Sukkari dates are particularly admired because they contain only fruit sugar and grape sugar, without white sugar. Other date varieties contain white sugar which makes them excessively sweet, and overconsumption can lead to obesity.
+</p>
+
+<h2 class="font-[Almarai] font-bold text-[30.4px] leading-[50.07px] tracking-[0.56px] text-left align-bottom uppercase">
+  Nutritional Benefits of Sukkari Dates from Sheikh Dates
+</h2>
+<p class="w-full font-[String_3] font-light text-[20.4px] leading-[33.07px] tracking-[0.56px] text-left align-bottom uppercase">
+  This variety is especially notable for its wonderful taste and high quality. Using Sukkari dates as a dietary supplement provides the body with essential nutrients.
+  
+  They're rich in fiber and vitamin C, and help promote cardiovascular health and strengthen bones thanks to their magnesium, potassium, calcium and other important elements.
+</p>
+      </div>
+    </div>
+  </div>
+ 
+<!--  -->
+     
+
+    
+    <footer dir="ltr" class="bg-pink-900 text-white px-8">
+        <!-- Main Footer Content -->
+        <div class="container mx-auto px-4 py-8">
+          <div class="flex flex-col md:flex-row justify-between">
+            <!-- Left Column - Logo and Contact -->
+            <div class="text-left mb-6 md:mb-0">
+              <!-- Logo -->
+              <div class="mb-4">
+                <img src="./assests/logo1.png" alt="Logo" class="inline-block" />
+              </div>
+      
+              <!-- Phone Number -->
+              <div class="mb-2">
+                <p class="font-[font-family/Font 1] font-bold text-[13px] leading-[17.85px] tracking-[0%] align-middle">
+                  Phone: <span class="text-[#E9ECEF]">+1 (555) 123-4567</span>
+                </p>
+              </div>
+      
+              <!-- Email -->
+              <div class="mb-4">
+                <p class="font-[font-family/Font 1] font-bold text-[13px] leading-[17.85px] tracking-[0%] align-middle">
+                  Contact Email:
+                  <span class="text-[#E9ECEF]">info@alshaykh.net</span>
+                </p>
+              </div>
+      
+              <!-- Social Media Icons -->
+              <div class="flex space-x-4">
+                <a href="#" class="text-white hover:text-gray-300">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"
+                    ></path>
+                  </svg>
+                </a>
+                <a href="#" class="text-white hover:text-gray-300">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                    ></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+      
+            <!-- Middle Column - Quick Links -->
+            <div class="text-left mb-6 md:mb-0">
+              <h3 class="font-[font-family/Font 1] font-bold text-[15px] leading-[14.4px] tracking-[0%] align-middle uppercase">
+                Quick Links
+              </h3>
+              <ul>
+                <li class="mb-2">
+                  <a href="#" class="font-[font-family/Font 1] font-normal text-[10.5px] leading-[17.85px] tracking-[0%] align-middle">
+                    All Products
+                  </a>
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="font-[font-family/Font 1] font-normal text-[10.5px] leading-[17.85px] tracking-[0%] align-middle">
+                    Calendar
+                  </a>
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="font-[font-family/Font 1] font-normal text-[10.5px] leading-[17.85px] tracking-[0%] align-middle">
+                    Promotions
+                  </a>
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="font-[font-family/Font 1] font-normal text-[10.5px] leading-[17.85px] tracking-[0%] align-middle">
+                    About Us
+                  </a>
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="font-[font-family/Font 1] font-normal text-[10.5px] leading-[17.85px] tracking-[0%] align-middle">
+                    Contact Us
+                  </a>
+                </li>
+              </ul>
+            </div>
+      
+            <!-- Right Column - Customer Service -->
+            <div class="text-left">
+              <h3 class="font-[font-family/Font 1] font-bold text-[15px] leading-[14.4px] tracking-[0%] align-middle uppercase">
+                Customer Service
+              </h3>
+              <ul>
+                <li class="mb-2">
+                  <a href="#" class="font-[font-family/Font 1] font-normal text-[10.5px] leading-[17.85px] tracking-[0%] align-middle">
+                    Return & Delivery Policy
+                  </a>
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="font-[font-family/Font 1] font-normal text-[10.5px] leading-[17.85px] tracking-[0%] align-middle">
+                    Privacy Policy
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Copyright Section -->
+        <div class="border-t border-pink-800 py-4">
+          <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+            <!-- Payment Methods -->
+            <img src="./assests/List.png" alt="Payment methods" />
+      
+            <!-- Copyright Text -->
+            <div class="text-sm">
+              All Rights Reserved Alshayeh, Developed and Designed by BeGroup
+            </div>
+          </div>
+        </div>
+      </footer>
+</body>
+</html>

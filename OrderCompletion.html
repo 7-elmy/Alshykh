@@ -26,7 +26,37 @@
 
     <!-- Tailwind via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-
+    <style>
+      /* Custom checkbox styling */
+      input[type="checkbox"] {
+        appearance: none;
+        -webkit-appearance: none;
+        width: 18px;
+        height: 18px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        outline: none;
+        cursor: pointer;
+        position: relative;
+      }
+      
+      input[type="checkbox"]:checked {
+        background-color: #87173D;
+        border-color: #87173D;
+      }
+      
+      input[type="checkbox"]:checked::before {
+        content: "";
+        position: absolute;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 2px 2px 0;
+        top: 2px;
+        left: 6px;
+        transform: rotate(45deg);
+      }
+    </style>
     <style>
       @keyframes carousel-slide {
         0%,
@@ -586,107 +616,309 @@
           >
         </div>
 
-        <div class="flex items-center gap-12">
-          <div class="w-full">ttt</div>
-          <div class="flex justify-center items-center mt-10">
-            <div class="bg-[#87173D] rounded-[50px] w-[451px] py-5">
-              <p
-                class="font-[Tajawal] font-bold text-[40.63px] leading-none tracking-normal text-center align-middle text-white"
-              >
-                طلبك
-              </p>
-
-              <div class="!border-b-2 py-3 !border-[#000]">
-                <div class="flex justify-between items-center px-5 mt-12">
-                  <div class="w-full">
-                    <p
-                      class="w-full font-['Changa'] font-semibold text-[20px] leading-[30.8px] tracking-normal text-center align-middle uppercase my-5 text-white"
+        <form>
+          <div class="block md:flex items-center gap-12">
+            <div class="w-full mt-24">
+              <div  class="!space-y-8 w-[90%] md:w-full mx-auto md:mx-0">
+                <div class="md:flex  justify-between py-13">
+                  <div class="relative  !my-5 md:my-0">
+                    <input
+                      type="text"
+                      id="floating_outlined"
+                      class="w-full block shadow-lg px-2.5 pb-2.5 pt-4 top-[431px] left-[360px] md:w-[347px] h-[64px] text-sm text-gray-900 bg-transparent rounded-lg border-2 border-[#777777] focus:outline-none focus:ring-0 focus:border-[#777777] peer"
+                      placeholder=" "
+                    />
+                    <label
+                      for="floating_outlined"
+                      class="absolute shadow-[0_4px_4px_rgba(0,0,0,0.25)] top-0 right-6  bg-white rounded-sm px-4 peer-placeholder-shown:-translate-y-1/2  text-[#777777] font-[String_3] font-medium text-[17px] leading-[150%] tracking-[0%] text-center w-fit h-[26px]"
+                      >الاسم </label
                     >
-                      المنتج
-                    </p>
                   </div>
-                  <div class="w-full">
-                    <p
-                      class="w-full font-['Changa'] font-semibold text-[20px] leading-[30.8px] tracking-normal text-center align-middle uppercase my-5 text-white"
+
+                  <div class="relative !my-5 md:my-0 ">
+                    <input
+                      type="text"
+                      id="floating_outlined"
+                      class="block px-2.5 shadow-lg pb-2.5 pt-4 top-[431px] left-[731px] w-full md:w-[347px] h-[64px] text-sm text-gray-900 bg-transparent rounded-lg border-2 border-[#777777] focus:outline-none focus:ring-0 focus:border-[#777777] peer"
+                      placeholder=" "
+                    />
+                    <label
+                      for="floating_outlined"
+                      class="absolute shadow-[0_4px_4px_rgba(0,0,0,0.25)]  top-0 right-6  bg-white rounded-sm px-4 peer-placeholder-shown:-translate-y-1/2  text-[#777777] font-[String_3] font-medium text-[17px] leading-[150%] tracking-[0%] text-center w-fit h-[26px]"
+                      >رقم الهاتف</label
                     >
-                      المجموع
+                  </div>
+                </div>
+                <div class="block md:flex justify-between py-13">
+                  <div class="relative !my-5 md:my-0 ">
+                    <input
+                      type="text"
+                      id="floating_outlined"
+                      class=" block shadow-lg px-2.5 pb-2.5 pt-4 top-[431px] left-[360px] w-full md:w-[347px] h-[64px] text-sm text-gray-900 bg-transparent rounded-lg border-2 border-[#777777] focus:outline-none focus:ring-0 focus:border-[#777777] peer"
+                      placeholder=" "
+                    />
+                    <label
+                      for="floating_outlined"
+                      class="absolute shadow-[0_4px_4px_rgba(0,0,0,0.25)] top-0 right-6  bg-white rounded-sm px-4 peer-placeholder-shown:-translate-y-1/2  text-[#777777] font-[String_3] font-medium text-[17px] leading-[150%] tracking-[0%] text-center w-fit h-[26px]"
+                      > العنوان</label
+                    >
+                  </div>
+                  <div class="relative !my-5 md:my-0 ">
+                    <input
+                      type="text"
+                      id="floating_outlined"
+                      class="block px-2.5 shadow-lg pb-2.5 pt-4 top-[431px] left-[731px] w-full md:w-[347px] h-[64px] text-sm text-gray-900 bg-transparent rounded-lg border-2 border-[#777777] focus:outline-none focus:ring-0 focus:border-[#777777] peer"
+                      placeholder=" "
+                    />
+                    <label
+                      for="floating_outlined"
+                      class="absolute shadow-[0_4px_4px_rgba(0,0,0,0.25)]  top-0 right-6  bg-white rounded-sm px-4 peer-placeholder-shown:-translate-y-1/2  text-[#777777] font-[String_3] font-medium text-[17px] leading-[150%] tracking-[0%] text-center w-fit h-[26px]"
+                      >الدولة</label
+                    >
+                  </div>
+                </div>
+                <div class="bloch md:flex justify-between py-13">
+                  <div class="relative !my-5 md:my-0 ">
+                    <input
+                      type="text"
+                      id="floating_outlined"
+                      class=" block shadow-lg px-2.5 pb-2.5 pt-4 top-[431px] left-[360px] w-full md:w-[347px] h-[64px] text-sm text-gray-900 bg-transparent rounded-lg border-2 border-[#777777] focus:outline-none focus:ring-0 focus:border-[#777777] peer"
+                      placeholder=" "
+                    />
+                    <label
+                      for="floating_outlined"
+                      class="absolute shadow-[0_4px_4px_rgba(0,0,0,0.25)] top-0 right-6  bg-white rounded-sm px-4 peer-placeholder-shown:-translate-y-1/2  text-[#777777] font-[String_3] font-medium text-[17px] leading-[150%] tracking-[0%] text-center w-fit h-[26px]"
+                      >المحافظة </label
+                    >
+                  </div>
+                  <div class="relative !my-5 md:my-0  ">
+                    <input
+                      type="text"
+                      id="floating_outlined"
+                      class="block px-2.5 shadow-lg pb-2.5 pt-4 top-[431px] left-[731px] w-full md:w-[347px] h-[64px] text-sm text-gray-900 bg-transparent rounded-lg border-2 border-[#777777] focus:outline-none focus:ring-0 focus:border-[#777777] peer"
+                      placeholder=" "
+                    />
+                    <label
+                      for="floating_outlined"
+                      class="absolute shadow-[0_4px_4px_rgba(0,0,0,0.25)]  top-0 right-6  bg-white rounded-sm px-4 peer-placeholder-shown:-translate-y-1/2  text-[#777777] font-[String_3] font-medium text-[17px] leading-[150%] tracking-[0%] text-center w-fit h-[26px]"
+                      >المنطقة</label
+                    >
+                  </div>
+                </div>
+  
+                <p class="text-[#87173D] font-bold text-[40.63px] leading-none tracking-normal text-right align-middle font-[Tajawal]"
+                >طريقة الدفع</p>
+  
+             
+          
+  
+              
+                  <div class="!space-y-4  mx-4 md:mx-0">
+                    <div class="flex p-5 items-center gap-2 border border-gray-300 rounded-md w-full md:w-[60%] ">
+                      <input type="checkbox" name="payment-method" id="cash">
+                      <label for="cash" class="cursor-pointer">الدفع عند الأستلام , أدفع عن نقداً عند الأستلام</label>
+                    </div>
+                    
+                    <div class="flex p-5 items-center gap-2 border border-gray-300 rounded-md w-full md:w-[60%] ">
+                      <input type="checkbox" name="payment-method" id="card">
+                      <label for="card" class="cursor-pointer">فيزا/ماستر كارد</label>
+                    </div>
+                    
+                    <div class="flex p-5 items-center gap-2 border border-gray-300 rounded-md w-full md:w-[60%] ">
+                      <input type="checkbox" name="payment-method" id="knet">
+                      <label for="knet" class="cursor-pointer">كي نت</label>
+                    </div>
+               
+                </div>
+                
+                <script>
+                  // Optional: If you need only one checkbox to be selected at a time (like radio buttons)
+                  document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+                    checkbox.addEventListener('change', function() {
+                      if (this.checked) {
+                        document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+                          if (cb !== this) cb.checked = false;
+                        });
+                      }
+                    });
+                  });
+                </script>
+  
+  <p class="text-[#87173D] font-bold text-[40.63px] leading-none tracking-normal text-right align-middle font-[Tajawal]"
+  >طريقة الشحن </p>
+  <div class="block md:flex  gap-3 items-center ">
+  
+      <div class="flex !my-5 md:my-0 p-5 items-center gap-2 border border-gray-300 rounded-md w-full md:w-[60%]">
+        <input type="checkbox" name="shipping-method" id="cash">
+        <label for="cash" class="cursor-pointer">مندوب الشحن</label>
+      </div>
+      
+      <div class="flex !my-5 md:my-0 p-5 items-center gap-2 border border-gray-300 rounded-md w-full md:w-[60%]">
+        <input type="checkbox" name="shipping-method" id="card">
+        <label for="card" class="cursor-pointer">إستلام من الفرع</label>
+      </div>
+    
+  
+  
+  </div>
+  
+  <script>
+    // Optional: If you need only one checkbox to be selected at a time
+    document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+      checkbox.addEventListener('change', function() {
+        if (this.checked) {
+          document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+            if (cb !== this) cb.checked = false;
+          });
+        }
+      });
+    });
+  </script>
+  
+ 
+  
+</div>
+            </div>
+            <div class="flex justify-center items-center ">
+              <div class="bg-[#87173D] rounded-[50px] w-[451px] py-5">
+                <p
+                  class="font-[Tajawal] font-bold text-[40.63px] leading-none tracking-normal text-center align-middle text-white"
+                >
+                  طلبك
+                </p>
+  
+                <div class="!border-b-2 py-3 !border-[#000]">
+                  <div class="flex justify-between items-center px-5 mt-12">
+                    <div class="w-full">
+                      <p
+                        class="w-full font-['Changa'] font-semibold text-[20px] leading-[30.8px] tracking-normal text-center align-middle uppercase my-5 text-white"
+                      >
+                        المنتج
+                      </p>
+                    </div>
+                    <div class="w-full">
+                      <p
+                        class="w-full font-['Changa'] font-semibold text-[20px] leading-[30.8px] tracking-normal text-center align-middle uppercase my-5 text-white"
+                      >
+                        المجموع
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex justify-between items-center px-5 py-5">
+                    <p
+                      class="w-full font-['Changa'] font-normal text-[12px] leading-[30.8px] tracking-normal text-center align-middle uppercase my-5 text-white"
+                    >
+                      عبوة التمر الصقعي الملكي الفاخر من تمور (كيلوغرام)
+                    </p>
+                    <p
+                      class="w-full font-['Changa'] font-normal text-[12px] leading-[30.8px] tracking-normal text-center align-middle uppercase my-5 text-white"
+                    >
+                      0.60د.ك
                     </p>
                   </div>
                 </div>
-                <div class="flex justify-between items-center px-5 py-5">
+  
+                <div class="!border-b-2 py-3 !border-[#000]">
+                  <!--  -->
+                  <div class="flex justify-between items-center px-5 py-5">
+                    <p
+                      class="w-full font-['Changa'] font-semibold text-[20px] leading-[30.8px] tracking-normal text-center align-middle uppercase my-5 text-white"
+                    >
+                      قيد الشحن
+                    </p>
+                    <p
+                      class="w-full font-['Changa'] font-semibold text-[14px] leading-[30.8px] tracking-normal text-center align-middle uppercase my-5 text-white"
+                    >
+                      0.60د.ك
+                    </p>
+                  </div>
+                  <!--  -->
+                  <div></div>
                   <p
-                    class="w-full font-['Changa'] font-normal text-[12px] leading-[30.8px] tracking-normal text-center align-middle uppercase my-5 text-white"
+                    class="w-full font-['Changa'] font-semibold text-[20px] leading-[30.8px] tracking-normal text-right px-24 align-middle uppercase my-5 text-white"
                   >
-                    عبوة التمر الصقعي الملكي الفاخر من تمور (كيلوغرام)
+                    الاجمالي
                   </p>
-                  <p
-                    class="w-full font-['Changa'] font-normal text-[12px] leading-[30.8px] tracking-normal text-center align-middle uppercase my-5 text-white"
-                  >
-                    0.60د.ك
-                  </p>
+  
+                  <div class="ps-20 pe-10">
+                    <label
+                      for=""
+                      class="font-['Changa'] font-normal text-[12px] leading-[30.8px] tracking-normal text-center align-middle uppercase my-5 text-white"
+                      >كود الخصم</label
+                    >
+                    <div
+                      class="flex justify-between items-center gap-8 py-3 w-full"
+                    >
+                      <input
+                        type="text"
+                        class="shadow-[0px_4px_4px_0px_#00000040] rounded-[20px] h-[40px]"
+                      />
+                      <button
+                        class="font-sans text-[12px] leading-none text-[#87173D] bg-white rounded-md p-3"
+                      >
+                        تطبيق الخصم
+                      </button>
+                    </div>
+                  </div>
                 </div>
-              </div>
-
-              <div class="!border-b-2 py-3 !border-[#000]">
-                <!--  -->
-                <div class="flex justify-between items-center px-5 py-5">
+                <div class="flex justify-between items-center ps-20 pe-10 gap-3">
                   <p
                     class="w-full font-['Changa'] font-semibold text-[20px] leading-[30.8px] tracking-normal text-center align-middle uppercase my-5 text-white"
                   >
-                    قيد الشحن
+                    السعر الكلي
                   </p>
                   <p
                     class="w-full font-['Changa'] font-semibold text-[14px] leading-[30.8px] tracking-normal text-center align-middle uppercase my-5 text-white"
                   >
-                    0.60د.ك
+                    0.60 د.ك
                   </p>
                 </div>
-                <!--  -->
-                <div></div>
-                <p
-                  class="w-full font-['Changa'] font-semibold text-[20px] leading-[30.8px] tracking-normal text-right px-24 align-middle uppercase my-5 text-white"
-                >
-                  الاجمالي
-                </p>
-
-                <div class="ps-20 pe-10">
-                  <label
-                    for=""
-                    class="font-['Changa'] font-normal text-[12px] leading-[30.8px] tracking-normal text-center align-middle uppercase my-5 text-white"
-                    >كود الخصم</label
-                  >
-                  <div
-                    class="flex justify-between items-center gap-8 py-3 w-full"
-                  >
-                    <input
-                      type="text"
-                      class="shadow-[0px_4px_4px_0px_#00000040] rounded-[20px] h-[40px]"
-                    />
-                    <button
-                      class="font-sans text-[12px] leading-none text-[#87173D] bg-white rounded-md p-3"
-                    >
-                      تطبيق الخصم
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="flex justify-between items-center ps-20 pe-10 gap-3">
-                <p
-                  class="w-full font-['Changa'] font-semibold text-[20px] leading-[30.8px] tracking-normal text-center align-middle uppercase my-5 text-white"
-                >
-                  السعر الكلي
-                </p>
-                <p
-                  class="w-full font-['Changa'] font-semibold text-[14px] leading-[30.8px] tracking-normal text-center align-middle uppercase my-5 text-white"
-                >
-                  0.60 د.ك
-                </p>
               </div>
             </div>
           </div>
-        </div>
+          <div class="block md:flex justify-around    ">
+            
+            <div>
+              <div class=" ">
+                <p class="text-[#87173D] py-8 font-bold text-[40.63px] leading-none tracking-normal text-right align-middle font-[Tajawal]"
+                > تاريخ وتوقيت التوصيل </p>
+                <div class="relative mt-10">
+                <input type="date" name="" id="" class="p-3 w-full border border-gray-300 rounded-md">
+                  <label 
+                  class="font-medium text-[14.75px] leading-[150%] tracking-normal text-center font-[String_3] text-[#777777] absolute -top-6 right-5 bg-white p-1 shadow-md" for="">تاريخ التوصيل</label>
+              </div>
+              
+              </div>
+              <div>
+               
+              <div class="relative my-10">
+
+                <input type="time" name="" id="" class="p-3 w-full border border-gray-300 rounded-md">
+                  <label 
+                  class="font-medium text-[14.75px] leading-[150%] tracking-normal text-center font-[String_3] text-[#777777] absolute -top-6 right-5 bg-white p-1 shadow-md" for="">توقيت التوصيل</label>
+              </div>
+              
+              </div>
+
+            </div>
+
+            <div>
+              <p class="text-[#87173D] py-8 font-bold text-[40.63px] leading-none tracking-normal text-right align-middle font-[Tajawal]"
+              >  معلومات إضافية  </p>
+
+
+            <label for="" class="text-[#87173D]">ملاحظات الطلب</label>
+              <textarea name="" class="p-3 border w-full border-gray-300 rounded-md" id=""></textarea>
+            
+            </div>
+          
+          </div>
+        </form>
       </div>
     </div>
+
+
+
     <footer dir="rtl" class="bg-pink-900 text-white px-8">
       <!-- Main Footer Content -->
       <div class="container mx-auto px-4 py-8">
